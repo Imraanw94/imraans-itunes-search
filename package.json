@@ -4,7 +4,7 @@
   "description": "iTunes Search Application",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app",
+    "start": "index.js",
     "test": "mocha"
   },
   "author": "Imraan Wadiwala",
