@@ -18,7 +18,7 @@ app.use(
   })
 );
 
-app.use(helmet.crossOriginResourcePolicy({ policy: "same-site" }));
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 
 const path = require("path");
 
