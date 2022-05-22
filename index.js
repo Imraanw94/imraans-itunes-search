@@ -9,6 +9,8 @@ const app = express();
 app.use(express.static("public"));
 app.use(helmet());
 
+const path = require('path')
+
 /* If we want our Express server to be able to access content that is passed 
 in the body of the HTTP request, we need to include the body-parser middleware. 
 The body-parser middleware extracts the entire body portion of an incoming 
