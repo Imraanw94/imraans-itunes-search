@@ -9,6 +9,15 @@ const app = express();
 app.use(express.static("public"));
 app.use(helmet());
 
+app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      "img-src": ["'self'", "https: data:"],
+    },
+  })
+);
+
 const path = require("path");
 
 /* If we want our Express server to be able to access content that is passed 
