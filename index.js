@@ -18,7 +18,11 @@ app.use(
   })
 );
 
-app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+app.use(
+  helmet({
+    crossOriginEmbedderPolicy: false,
+  })
+);
 
 const path = require("path");
 
