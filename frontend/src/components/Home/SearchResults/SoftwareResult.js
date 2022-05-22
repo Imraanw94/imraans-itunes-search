@@ -70,6 +70,7 @@ export function SoftwareResult(props) {
         className="ms-3 mt-3"
         variant="top"
         src={props.result.raw.artworkUrl512}
+        crossOrigin="true"
       />
       <Card.Body>
         <Card.Title>
@@ -107,6 +108,7 @@ export function SoftwareResult(props) {
             style={{ width: "150px" }}
             className="ms-3 mb-3"
             src={screenshot}
+            crossOrigin="true"
           />
         ))}
       </Stack>

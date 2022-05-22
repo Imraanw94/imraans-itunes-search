@@ -71,6 +71,7 @@ export function AudiobookResult(props) {
         className="ms-3 mt-3"
         variant="top"
         src={props.result.artworkUrl100}
+        crossOrigin="true"
       />
       <Card.Body>
         <Card.Title>
