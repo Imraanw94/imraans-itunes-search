@@ -18,6 +18,8 @@ app.use(
   })
 );
 
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+
 const path = require("path");
 
 /* If we want our Express server to be able to access content that is passed 
