@@ -9,7 +9,7 @@ const app = express();
 app.use(express.static("public"));
 app.use(helmet());
 
-const path = require('path')
+const path = require("path");
 
 /* If we want our Express server to be able to access content that is passed 
 in the body of the HTTP request, we need to include the body-parser middleware. 
@@ -18,14 +18,6 @@ request stream and exposes it on req.body.*/
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "frontend/build")));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-  });
-}
-
 
 // Route handler for GET requests with relevant path
 app.get("/audiobook", function (req, res) {
@@ -243,6 +235,13 @@ app.get("/favourites", function (req, res) {
     res.send(result);
   });
 });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "frontend/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+  });
+}
 
 // To get the port number from the environment variables instead of hardcoding
 // it, we use the following code:
