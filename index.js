@@ -9,6 +9,7 @@ const app = express();
 app.use(express.static("public"));
 app.use(helmet());
 
+// Below to allow images to display from cross-origin
 app.use(
   helmet.contentSecurityPolicy({
     useDefaults: true,
@@ -17,7 +18,6 @@ app.use(
     },
   })
 );
-
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 
 const path = require("path");
