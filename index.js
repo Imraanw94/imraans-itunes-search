@@ -10,12 +10,6 @@ app.use(express.static("public"));
 app.use(helmet());
 
 app.use(
-  helmet({
-    crossOriginEmbedderPolicy: false,
-  })
-);
-
-app.use(
   helmet.contentSecurityPolicy({
     useDefaults: true,
     directives: {
@@ -23,6 +17,8 @@ app.use(
     },
   })
 );
+
+app.use(helmet.crossOriginResourcePolicy({ policy: "same-site" }));
 
 const path = require("path");
 
