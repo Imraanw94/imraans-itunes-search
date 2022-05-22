@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
     "test": "mocha"
   },
   "author": "Imraan Wadiwala",
@@ -24,6 +25,5 @@
     "chai": "4.3.6",
     "mocha": "10.0.0",
     "nodemon": "2.0.16"
-  },
-  "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend" 
+  }
 }
